@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Website Class E</title>
+    <style>
+        /* Mengatur dasar tampilan halaman */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow: hidden;
+        }
+
+        /* Container utama untuk login */
+        .login-container {
+            background-color: rgba(136, 0, 255, 0.155);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.304);
+            width: 350px;
+            text-align: center;
+        }
+
+        /* Judul login */
+        .login-container h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #4A4A4A;
+        }
+
+        /* Input field untuk password */
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            background-color: #ffffff83;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-container input[type="password"]:focus {
+            background-color: #e0e0e0;
+            outline: none;
+        }
+
+        /* Tombol login dengan efek hover */
+        .login-container button {
+            width: 100%;
+            padding: 15px;
+            background-color: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .login-container button:hover {
+            background-color: #764ba2;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Pesan error */
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Login to Class E</h2>
+    <form id="loginForm">
+        <input type="password" id="password" placeholder="Enter Password" required>
+        <button type="submit">Login</button>
+        <div id="errorMessage" class="error-message"></div>
+    </form>
+</div>
+
+<script>
+    const _0x53d2=['\x45'];(function(_0x4c5f22,_0x53d2c1){const _0x22838b=function(_0x4486e6){while(--_0x4486e6){_0x4c5f22['push'](_0x4c5f22['shift']());}};_0x22838b(++_0x53d2c1);}(_0x53d2,0x1d7));const _0x2283=function(_0x4c5f22,_0x53d2c1){_0x4c5f22=_0x4c5f22-0x0;let _0x22838b=_0x53d2[_0x4c5f22];return _0x22838b;};const correctPasswordHex=_0x2283('0x0');
+    function hexToString(hex) {
+        return hex.replace(/\\x([0-9A-Fa-f]{2})/g, function(match, p1) {
+            return String.fromCharCode(parseInt(p1, 16));
+        });
+    }
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const passwordInput = document.getElementById('password').value;
+        const errorMessage = document.getElementById('errorMessage');
+        const correctPassword = hexToString(correctPasswordHex);
+        const inputPassword = passwordInput;
+        if (inputPassword === correctPassword) {
+            window.location.href = 'dashboard.html';
+        } else {
+            errorMessage.textContent = 'Password salah, silakan coba lagi.';
+        }
+    });
+</script>
+
+</body>
+</html>
